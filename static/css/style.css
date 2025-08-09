@@ -5,7 +5,9 @@
     font-family: Arial, sans-serif;
 }
 
-
+#auto_motive {
+    text-align: center;
+}
 header {
     display: flex;
     justify-content: space-between;
