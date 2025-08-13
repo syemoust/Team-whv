@@ -57,6 +57,29 @@ nav ul li a:hover {
     color: #ffcc00;
 }
 
+.msH2 {
+    text-align: center;
+    font-size: 30px;
+}
+#team1 {
+    text-align: center;
+    margin-bottom: 15%; 
+}
+#team1 ul { margin-left: 15%; margin-bottom: 1%; }
+#team1 ul li{
+
+    overflow: hidden;
+    float: left;
+}
+
+#team1 li img {
+    border-radius: 50%;
+}
+
+#team1 span {
+    margin-top: 20%;
+    color: darkred;
+}
  #accueil {
     margin-top: 1%;
     background-image: url('../../static/media/automotive.jpg'); /*  center/cover no-repeat;*/
