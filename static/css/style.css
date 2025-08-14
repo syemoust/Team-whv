@@ -4,8 +4,17 @@
 
     #auto_motive {}
     #auto_motive h2 {}
-    #auto_motive .img2 {
-        width: 90%; height: 60%;
+    #auto_motive video {
+        width: 50%; height: 30%;
+        text-align: center;
+    }
+
+    #team1 {
+        padding-bottom: 100%;
+    }
+
+    #team1 li {
+        padding-left: -5%;
     }
 }
 
@@ -62,12 +71,13 @@ nav ul li a:hover {
     font-size: 30px;
 }
 #team1 {
-    text-align: center;
     margin-bottom: 15%; 
 }
-#team1 ul { margin-left: 15%; margin-bottom: 1%; }
+#team1 ul { 
+    margin-bottom: 1%; 
+    margin-left: 18%;
+}
 #team1 ul li{
-
     overflow: hidden;
     float: left;
 }
@@ -77,8 +87,9 @@ nav ul li a:hover {
 }
 
 #team1 span {
-    margin-top: 20%;
-    color: darkred;
+    font-family: "Times New Roman";
+    color: black;
+    text-shadow: 1px 0.5px 1px red;
 }
  #accueil {
     margin-top: 1%;
