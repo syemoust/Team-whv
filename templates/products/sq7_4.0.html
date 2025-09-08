@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Audi SQ7 4.0 TFSI</title>
+  <meta name="description" content="Beautiful responsive product presentation for SEID." />
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --accent:#6ee7b7;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      font-family: Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--bg),#081024 60%);
+      font-size:16px;
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:24px;
+    }
+
+    .wrap{
+      width:1100px;
+      max-width:1100px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:start;
+    }
+
+    /* left: hero / images */
+    .gallery{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:22px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    }
+    .main-photo{
+    	margin-top: 10%;
+        width:100%;
+        height:520px;
+        border-radius:12px;
+        overflow:hidden;
+        background:#071028 center/cover no-repeat;
+        display:flex;
+        align-items:flex-end;
+        justify-content:flex-start;
+        position:relative;
+    }
+    .main-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .badge{
+      position:absolute;left:18px;bottom:18px;background:linear-gradient(90deg,var(--accent),#34d399);padding:8px 12px;border-radius:999px;font-weight:600;color:#021214;font-size:14px;backdrop-filter:blur(6px);
+    }
+
+    .thumbs{
+      margin-top:14px;display:flex;gap:12px;align-items:center;
+    }
+    .thumbs button{width:84px;height:62px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);background:var(--glass);cursor:pointer}
+    .thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* right: product card */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:24px;border-radius:18px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 40px rgba(2,6,23,0.6);
+      position:sticky;top:40px;
+    }
+    .brand{font-size:13px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+    .title{font-size:24px;margin:8px 0 6px;font-weight:700}
+    .rating{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:14px}
+    .price-row{display:flex;align-items:center;gap:12px;margin:18px 0}
+    .price{font-size:28px;font-weight:800}
+    .old{font-size:14px;color:var(--muted);text-decoration:line-through}
+    .cta{display:flex;gap:12px;margin-top:14px}
+    .btn{
+      padding:12px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:700;font-size:15px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.5);
+    }
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#34d399);color:#04221b}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+    .spec{background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;font-size:14px;color:var(--muted)}
+
+    .desc{margin-top:16px;color:#dce9f8;line-height:1.5;font-size:15px}
+
+    footer.note{margin-top:18px;color:var(--muted);font-size:13px}
+
+    /* small screens */
+    @media (max-width:1000px){
+      .wrap{grid-template-columns:1fr;max-width:920px;padding:0}
+      .main-photo{height:400px}
+      .card{position:relative;top:0}
+    }
+    @media (max-width:560px){
+      body{padding:18px}
+      .main-photo{height:320px}
+      .thumbs button{width:64px;height:48px}
+      .price{font-size:22px}
+    }
+
+    /* subtle interaction styles */
+    .thumbs button:focus{outline:2px solid rgba(110,231,183,0.15)}
+    .thumbs button.active{box-shadow:0 8px 20px rgba(2,6,23,0.6);transform:translateY(-4px)}
+    .btn:active{transform:translateY(1px)}
+
+    /* accessibility helpers */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+
+    <section class="gallery" aria-label="Product images">
+      <div class="main-photo" id="mainPhoto">
+        <img src="../../static/media/sq7/sq7_3.png" alt="SQ7">
+        <!-- <span class="badge">New • SEID Edition</span> -->
+      </div>
+
+      <div class="thumbs" role="list">
+        <button aria-label="Thumbnail 1" data-src="../../static/media/sq7/sq7_1.png">
+          <img src="../../static/media/sq7/sq7_1.png" alt="thumb 2">
+        </button>
+        <button aria-label="Thumbnail 2" data-src="../../static/media/sq7/sq7_2.png">
+          <img src="../../static/media/sq7/sq7_2.png" alt="thumb 2">
+        </button>
+        <button aria-label="Thumbnail 3" data-src="../../static/media/sq7/sq7_3.png">
+          <img src="../../static/media/sq7/sq7_3.png" alt="thumb 2">
+        </button>
+        <button aria-label="Thumbnail 4" data-src="../../static/media/sq7/sq7_4.png">
+          <img src="../../static/media/sq7/sq7_2.png" alt="thumb 2">
+        </button>
+        <button aria-label="Thumbnail 5" data-src="../../static/media/sq7/sq7_5.png">
+          <img src="../../static/media/sq7/sq7_5.png" alt="thumb 2">
+        </button>
+
+      </div>
+    </section>
+
+    <aside class="card" aria-labelledby="productTitle">
+      <div class="brand">Audi SQ7 4.0 TFSI</div>
+      <h1 id="productTitle" class="title">Audi SQ7 4.0 TFSI EXCLUSIVE*PANO*STHZG*AHK*HD-M*BLACK.</h1>
+      <div class="rating" aria-hidden="true">★★★★★ <span style="margin-left:6px">4.8 · 1,234 reviews</span></div>
+
+      <div class="price-row">
+        <div class="price"><strong>€ 72 859 TTC</strong></div>
+        <!-- <div class="old">€159</div> -->
+        <div style="margin-left:auto;color:#9ee6c7;font-weight:700;padding:6px 10px;border-radius:8px;background:rgba(110,231,183,0.06);">Free shipping</div>
+      </div>
+
+      <p class="desc">Bring rich, room-filling sound wherever you go. The SEID Nova combines award-winning acoustic engineering with a compact, water-resistant body and built-in voice assistant support. Up to 18 hours of battery life.</p>
+
+      <div class="specs">
+        <div class="spec"><strong>Battery</strong><div>18 hours</div></div>
+        <div class="spec"><strong>Water-resist</strong><div>IP67</div></div>
+        <div class="spec"><strong>Bluetooth</strong><div>5.3 Low Energy</div></div>
+        <div class="spec"><strong>Weight</strong><div>620 g</div></div>
+      </div>
+
+      <div class="cta">
+        <button class="btn btn-primary" id="buyBtn">Add to cart — €129</button>
+        <button class="btn btn-ghost" id="wishlist">♡ Wishlist</button>
+      </div>
+
+      <footer class="note">30-day returns · 2-year warranty · Ships within 1 business day</footer>
+    </aside>
+
+  </div>
+
+  <script>
+    // Thumbnail click-to-change main photo (no frameworks)
+    const thumbs = document.querySelectorAll('.thumbs button');
+    const main = document.querySelector('#mainPhoto img');
+    thumbs.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        thumbs.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const src = btn.getAttribute('data-src');
+        // slight fade effect
+        main.style.opacity = 0;
+        setTimeout(()=>{
+          main.src = src;
+          main.onload = ()=> main.style.opacity = 1;
+        },180);
+      });
+    });
+
+    // Simple 'Add to cart' micro interaction
+    const buy = document.getElementById('buyBtn');
+    buy.addEventListener('click', ()=>{
+      const original = buy.textContent;
+      buy.textContent = '✓ Added';
+      buy.disabled = true;
+      buy.style.opacity = 0.95;
+      setTimeout(()=>{ buy.textContent = original; buy.disabled = false; },1200);
+    });
+
+    // Keyboard accessibility for thumbnails
+    thumbs.forEach(btn=>{btn.addEventListener('keydown', e=>{
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); btn.click(); }
+    })});
+
+  </script>
+</body>
+</html>
